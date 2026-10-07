@@ -10,10 +10,10 @@
 
 # The OpenSekai community project is consumed as the submodule below; keep
 # its large source assets and generated content out of this parent repository.
-/application/OpenSekai_Community_rs/Assets/
-/application/OpenSekai_Community_rs/content/
-/application/OpenSekai_Community_rs/resources/
-/application/OpenSekai_Community_rs/ffmpeg/
+/application/OpenSekai-ASMR/Assets/
+/application/OpenSekai-ASMR/content/
+/application/OpenSekai-ASMR/resources/
+/application/OpenSekai-ASMR/ffmpeg/
 
 # Model and generated media artifacts.
 **/*.onnx

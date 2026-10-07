@@ -14,7 +14,7 @@ import sys
 import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT / "application/OpenSekai_Community_rs"
+PROJECT = ROOT / "application/OpenSekai-ASMR"
 
 
 def isolated_run(command, env, timeout):

@@ -1,8 +1,8 @@
 Application: OpenSekai / Ojsk Community, ABI 3
 Editor font: /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf (326 glyphs)
 Editor GPU: Intel(R) Graphics (RPL-P)
-Application font: /home/fuurin/asm/unity_ui/application/OpenSekai_Community_rs/Assets/Resources/font/FOT-RodinNTLGPro-EB.otf, glyphs=230, missing=0
-Application font: /home/fuurin/asm/unity_ui/application/OpenSekai_Community_rs/Assets/Resources/font/FOT-RodinNTLGPro-DB.otf, glyphs=230, missing=0
+Application font: /home/fuurin/asm/unity_ui/application/OpenSekai-ASMR/Assets/Resources/font/FOT-RodinNTLGPro-EB.otf, glyphs=230, missing=0
+Application font: /home/fuurin/asm/unity_ui/application/OpenSekai-ASMR/Assets/Resources/font/FOT-RodinNTLGPro-DB.otf, glyphs=230, missing=0
 Editor language: zh-CN
 Application framebuffer: 1920x1080
 Application font 1: added 3 glyphs, missing=0
@@ -12,8 +12,8 @@ Application font 2: added 1 glyphs, missing=0
 Application resize: driver=x11 flags=268437025
 Application framebuffer: 1280x800
 Application framebuffer: 1280x800
-Application image: /home/fuurin/asm/unity_ui/application/OpenSekai_Community_rs/Assets/Texture2D/sactx-0-2048x1024-ASTC 6x6-MusicScoreMakerAtlas-f016719d.png
-Application image: /home/fuurin/asm/unity_ui/application/OpenSekai_Community_rs/Assets/Texture2D/sactx-1-2048x2048-ASTC 4x4-CommonAtlas-ac1217fb.png
+Application image: /home/fuurin/asm/unity_ui/application/OpenSekai-ASMR/Assets/Texture2D/sactx-0-2048x1024-ASTC 6x6-MusicScoreMakerAtlas-f016719d.png
+Application image: /home/fuurin/asm/unity_ui/application/OpenSekai-ASMR/Assets/Texture2D/sactx-1-2048x2048-ASTC 4x4-CommonAtlas-ac1217fb.png
 Application font 1: added 3 glyphs, missing=0
 Editor screenshot: /home/fuurin/asm/unity_ui/build/opensekai-native-asan.png (1280x800)
 Editor rendered: frames=110 nodes=984 text=0 draws=517 batches=34 elapsed=6.270 s

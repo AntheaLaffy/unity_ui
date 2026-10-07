@@ -14,7 +14,7 @@ from check_opensekai_song import isolated_run
 from compare_opensekai_reference import panel
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT / "application/OpenSekai_Community_rs"
+PROJECT = ROOT / "application/OpenSekai-ASMR"
 REFERENCE = PROJECT / "resources/references/0114_01"
 
 

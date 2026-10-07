@@ -6,7 +6,7 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageOps
 
 ROOT=Path(__file__).resolve().parents[1]
-PROJECT=ROOT/"application/OpenSekai_Community_rs"
+PROJECT=ROOT/"application/OpenSekai-ASMR"
 REFERENCE=PROJECT/"resources/references/0114_01"
 
 

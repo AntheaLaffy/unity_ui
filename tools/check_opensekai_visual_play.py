@@ -11,7 +11,7 @@ from PIL import Image, ImageDraw
 from check_opensekai_song import isolated_run
 
 ROOT = Path(__file__).resolve().parents[1]
-PROJECT = ROOT / "application/OpenSekai_Community_rs"
+PROJECT = ROOT / "application/OpenSekai-ASMR"
 
 
 def main():

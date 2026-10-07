@@ -20,9 +20,9 @@ ASMUI_LANG=zh-CN ASMUI_FONT="$HOME/.local/share/fonts/LXGWWenKai-Regular.ttf" ma
 
 这是编辑器视觉与交互原型；层级和检查器目前使用内置示例，尚未接入通用 Unity 项目读写或构建。Game 视图可加载下述 Rust 应用；运行不依赖 C#。未接入的菜单项置灰。场景示例使用投影网格和立方体，其他对象用于展示检查器样式。
 
-## DiffSinger-ASM 虚拟歌姬编辑器
+## DiffSinger-ASMR 虚拟歌姬编辑器
 
-`application/DiffSinger-ASM` 是基于当前框架的 DiffSinger 专属虚拟歌姬编辑器。汇编编辑核心与 UI 围绕声库、歌词/音素、音高控制和歌声预览发展，唯一歌声引擎为本机 DiffSinger-ASM。`application/diffsinger` 已软链接到 `/home/fuurin/asm/diffsinger`，方便直接修改原源码。
+`application/DiffSinger-ASMR` 是基于当前框架的 DiffSinger 专属虚拟歌姬编辑器。汇编编辑核心与 UI 围绕声库、歌词/音素、音高控制和歌声预览发展，唯一歌声引擎为本机 DiffSinger-ASM。`application/diffsinger` 已软链接到 `/home/fuurin/asm/diffsinger`，方便直接修改原源码。
 
 ```sh
 make diffsinger                     # 钢琴卷帘、中文歌词、音高/参数、真实歌声合成与播放
@@ -32,11 +32,11 @@ make diffsinger-render-check        # 本机现有声库的原生合成与 WAV �
 make diffsinger-ustx-check          # 现有 OpenUtau USTX 工程的导入和重开
 ```
 
-此版本支持直接导入 OpenUtau `.ustx`、另存 `.dse`、兼容 `.tlp`、轨道/片段、撤销重做、中文输入、后台合成、缓存播放与 WAV 导出。WAV/FLAC 伴奏支持波形、移动/裁剪/淡入淡出、音量/声像、独立试听和与歌声混音；USTX 原始数据随新工程保留，源文件保持只读。当前使用确定性音素时长分配；variance / duration 预测、渐进播放和变速尚未实现。详细边界与声库配置见 [DiffSinger-ASM 说明](application/DiffSinger-ASM/README.md)，完整产品剩余工作见 [开发清单](application/DiffSinger-ASM/docs/DEVELOPMENT.md)。新增的桌面宿主与有界画布随编辑器需求持续改进。
+此版本支持直接导入 OpenUtau `.ustx`、另存 `.dse`、兼容 `.tlp`、轨道/片段、撤销重做、中文输入、后台合成、缓存播放与 WAV 导出。WAV/FLAC 伴奏支持波形、移动/裁剪/淡入淡出、音量/声像、独立试听和与歌声混音；USTX 原始数据随新工程保留，源文件保持只读。当前使用确定性音素时长分配；variance / duration 预测、渐进播放和变速尚未实现。详细边界与声库配置见 [DiffSinger-ASMR 说明](application/DiffSinger-ASMR/README.md)，完整产品剩余工作见 [开发清单](application/DiffSinger-ASMR/docs/DEVELOPMENT.md)。新增的桌面宿主与有界画布随编辑器需求持续改进。
 
 ## OpenSekai 的 Rust 应用迁移
 
-`application/OpenSekai_Community_rs` 正在迁移为 Rust 应用，通过版本化 C ABI 接入 Game 视图；渲染仍走现有 ASM 节点、字形、批处理与 Vulkan 后端。编辑器保持默认中文与 LXGW，应用保留原项目字体文件。
+`application/OpenSekai-ASMR` 正在迁移为 Rust 应用，通过版本化 C ABI 接入 Game 视图；渲染仍走现有 ASM 节点、字形、批处理与 Vulkan 后端。编辑器保持默认中文与 LXGW，应用保留原项目字体文件。
 
 ```sh
 make opensekai-editor               # 构建 Rust 动态库并在编辑器中运行
@@ -46,9 +46,9 @@ make opensekai-window-check         # 真实窗口中文输入、谱面编辑/�
 make opensekai-live-check           # 真实窗口按键演奏、暂停、结算与音频时钟
 ```
 
-用户放入的官谱已归档到 `application/OpenSekai_Community_rs/content/official/source`，3,507 张谱面转换为 `content/library` 中的可编辑包，默认启动即加载。管理页支持按曲名、ID、难度搜索。选择谱面后点击「无音乐练习」即可用键盘演奏：12 个轨道键为 `A S D F G H J K L ; ' /`，按住连接长条、松手判定尾部，空格或方向键划动，`Esc` 暂停，暂停/结算页可重试、返回。
+用户放入的官谱已归档到 `application/OpenSekai-ASMR/content/official/source`，3,507 张谱面转换为 `content/library` 中的可编辑包，默认启动即加载。管理页支持按曲名、ID、难度搜索。选择谱面后点击「无音乐练习」即可用键盘演奏：12 个轨道键为 `A S D F G H J K L ; ' /`，按住连接长条、松手判定尾部，空格或方向键划动，`Esc` 暂停，暂停/结算页可重试、返回。
 
-Tell Your World 六个难度已补入原版音乐与封面；[原版美术及全部音效](application/OpenSekai_Community_rs/resources/opensekai/README.md) 另有 Git 追踪的资源快照和哈希清单。判定、摩擦/划动、长条循环和手动结算已使用原版音效，独立混音不改变音乐时钟。其他缺少音乐的谱面继续标明练习模式。音频栏可补入 OGG/MP3/WAV，运行时由 FFmpeg 解码、SDL 播放，并按音频时钟推进判定。完整设置、原版演出/特效/MV、历史记录与应用项目树/检查器仍在迁移中；当前截图不能证明整款应用视觉完全一致。基准、运行方式和验收范围见 [OpenSekai 迁移说明](application/OpenSekai_Community_rs/native/README.md)。
+Tell Your World 六个难度已补入原版音乐与封面；[原版美术及全部音效](application/OpenSekai-ASMR/resources/opensekai/README.md) 另有 Git 追踪的资源快照和哈希清单。判定、摩擦/划动、长条循环和手动结算已使用原版音效，独立混音不改变音乐时钟。其他缺少音乐的谱面继续标明练习模式。音频栏可补入 OGG/MP3/WAV，运行时由 FFmpeg 解码、SDL 播放，并按音频时钟推进判定。完整设置、原版演出/特效/MV、历史记录与应用项目树/检查器仍在迁移中；当前截图不能证明整款应用视觉完全一致。基准、运行方式和验收范围见 [OpenSekai 迁移说明](application/OpenSekai-ASMR/native/README.md)。
 
 ## 构建与验证
 

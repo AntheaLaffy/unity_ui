@@ -1,3 +1,6 @@
-[submodule "application/OpenSekai_Community_rs"]
-	path = application/OpenSekai_Community_rs
-	url = git@github.com:AntheaLaffy/OpenSekai_Community_rs.git
+[submodule "application/OpenSekai-ASMR"]
+	path = application/OpenSekai-ASMR
+	url = https://github.com/AntheaLaffy/OpenSekai-ASMR.git
+[submodule "application/DiffSinger-ASMR"]
+	path = application/DiffSinger-ASMR
+	url = https://github.com/AntheaLaffy/DiffSinger-ASMR.git

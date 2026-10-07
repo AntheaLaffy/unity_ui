@@ -39,7 +39,7 @@ $(BUILD)/editor_scene.o: demo/editor_scene.c include/asmui_editor.h include/asmu
 $(BUILD)/editor: demo/editor_main.c demo/application_sound.h include/asmui_editor.h $(EDITOR_OBJS) shaders
 	$(CC) $(CFLAGS) -Werror $(INCLUDES) $(FONT_CFLAGS) $(PNG_CFLAGS) demo/editor_main.c $(EDITOR_OBJS) $$(pkg-config --cflags --libs sdl3) $(FONT_LIBS) $(PNG_LIBS) -lvulkan -lm -ldl -o $@
 
-OPENSEKAI = application/OpenSekai_Community_rs
+OPENSEKAI = application/OpenSekai-ASMR
 OPENSEKAI_SCENE = $(OPENSEKAI)/native/generated/editor-scene.json
 .PHONY: opensekai opensekai-check opensekai-editor opensekai-assets opensekai-window-check opensekai-live-check opensekai-song-check opensekai-result-check opensekai-visual-check opensekai-gameplay-check opensekai-scoring-check
 opensekai: $(OPENSEKAI_SCENE)
@@ -402,4 +402,4 @@ text-hb-check: $(BUILD)/text_harfbuzz.o
 clean:
 	rm -rf $(BUILD)
 
-include application/DiffSinger-ASM/framework.mk
+include application/DiffSinger-ASMR/framework.mk

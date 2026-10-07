@@ -33,7 +33,7 @@ def main():
     image = build / f"{args.artifact_prefix}.png"
     log_file = build / f"{args.artifact_prefix}.log"
     with tempfile.TemporaryDirectory(prefix="opensekai-window-", dir=build) as temporary:
-        command = [str(args.editor.resolve()), "--project", str(ROOT / "application/OpenSekai_Community_rs"),
+        command = [str(args.editor.resolve()), "--project", str(ROOT / "application/OpenSekai-ASMR"),
                    "--data-dir", temporary, "--app-only", "--app-smoke", "--frames", "110",
                    "--size", "1920", "1080", "--output", str(image)]
         result = subprocess.run(command, cwd=ROOT, env=env, text=True, capture_output=True, timeout=120)

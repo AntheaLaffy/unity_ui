@@ -29,14 +29,14 @@
 make opensekai-check
 make test editor-check editor-visual-check
 make opensekai-window-check OPENSEKAI_WINDOW_ARGS='--validation-root /tmp/unity-ui-vulkan-validation/usr'
-python3 application/OpenSekai_Community_rs/tools/capture_minimap.py
-python3 application/OpenSekai_Community_rs/tools/capture_long_notes.py
+python3 application/OpenSekai-ASMR/tools/capture_minimap.py
+python3 application/OpenSekai-ASMR/tools/capture_long_notes.py
 ```
 
 验证层路径可替换为本机安装位置；不传参数仍可运行真实窗口检查。谱面截图 fixture 是本目录的 `fixture/`，不使用用户原有谱面：
 
 ```sh
-./build/editor --project application/OpenSekai_Community_rs \
+./build/editor --project application/OpenSekai-ASMR \
   --data-dir artifacts/2026-09-26-opensekai-maker/fixture --app-screen maker \
   --headless --size 1920 1080 --output build/opensekai-editor-zh.png
 ```

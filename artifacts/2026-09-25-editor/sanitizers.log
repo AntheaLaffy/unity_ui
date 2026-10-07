@@ -1,0 +1,4 @@
+editor ASM: project 100 points, hit priority/edges/NaN, nested Y-up layout, gradient orientation OK
+editor interaction: locale, object binding, numeric edit, play/pause/step, tabs, foldouts, XYZ transform, IME preedit, UTF-8 bounds/search/backspace, clipped hits and scrolling OK
+editor localization: 2 locales x 24 states, 25210 shaped glyphs covered, atlas=2048x1024, missing=0, font=/home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf
+Editor core checks passed

@@ -1,0 +1,41 @@
+{
+  "status": "passed",
+  "editing": [
+    "move",
+    "transpose",
+    "IME",
+    "lyrics",
+    "undo",
+    "redo",
+    "delete",
+    "save",
+    "reopen",
+    "track undo",
+    "resize"
+  ],
+  "rendering": [
+    "cancel",
+    "native synthesis",
+    "SDL queued-audio clock",
+    "cache export"
+  ],
+  "voice": {
+    "notes": 1,
+    "tracks": 1,
+    "curves": 0,
+    "sourceFormat": "DSE/TLP",
+    "waveParts": 0,
+    "audioOnly": false,
+    "audioPeaksReady": true,
+    "activeWave": 0,
+    "activeTrack": 0,
+    "arrangeTick": 0,
+    "parametersNotApplied": 0,
+    "modified": false,
+    "path": "/home/fuurin/asm/unity_ui/application/DiffSinger-ASM/build/window-check/voice.tlp",
+    "playTick": 312.0762023925781,
+    "rendered": true,
+    "samples": 44032,
+    "message": "播放歌声与伴奏混音 · 空格暂停"
+  }
+}

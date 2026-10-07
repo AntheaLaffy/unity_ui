@@ -1,0 +1,10 @@
+sdl3 (pkg-config): 3.4.14
+vulkan (pkg-config): 1.4.357
+freetype2 (pkg-config): 26.6.20
+harfbuzz (pkg-config): 14.4.0
+libpng (pkg-config): 1.6.58
+GPU: Intel(R) Graphics (RPL-P)
+Default locale: zh-CN (ASMUI_LANG and ASMUI_FONT unset during validation)
+fada21b81ddc620f3b8d27df3ad8c1aa9b3d829ed7b4de63256895e608f14c01  /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf
+Linux 7.1.11-arch1-1 x86_64
+cc (GCC) 16.2.1 20260810

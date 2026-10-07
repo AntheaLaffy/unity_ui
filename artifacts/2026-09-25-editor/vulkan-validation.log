@@ -1,0 +1,44 @@
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -c demo/editor_scene.c -o build/editor_scene.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c demo/editor_i18n.c -o build/editor_i18n.o
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 tests/editor_core.c build/editor_scene.o build/editor_i18n.o build/asmui_editor.o build/asmui.o build/font_sdf_freetype.o build/text_harfbuzz.o -lharfbuzz -lfreetype -lm -o build/editor_core
+./build/editor_core
+editor ASM: project 100 points, hit priority/edges/NaN, nested Y-up layout, gradient orientation OK
+editor interaction: locale, object binding, numeric edit, play/pause/step, tabs, foldouts, XYZ transform, IME preedit, UTF-8 bounds/search/backspace, clipped hits and scrolling OK
+editor localization: 2 locales x 24 states, 25210 shaped glyphs covered, atlas=2048x1024, missing=0, font=/home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf
+Editor core checks passed
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libpng16 demo/editor_main.c build/editor_i18n.o build/editor_scene.o build/asmui_editor.o build/asmui.o build/text_stream.o build/font_sdf_freetype.o build/text_harfbuzz.o build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_texture.o $(pkg-config --cflags --libs sdl3) -lharfbuzz -lfreetype -lpng16 -lvulkan -lm -o build/editor
+python3 tools/check_editor_visual.py
+Editor font: /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf (326 glyphs)
+Editor GPU: Intel(R) Graphics (RPL-P)
+Editor language: zh-CN
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-zh.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-en.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-compact.png (1024x680)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-compact-en.png (1024x680)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-menu.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-camera.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-console.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-2d.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-game.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-rotated.png (1440x900)
+Input glyph page 1: 3 new glyphs, missing=0, build+upload=181.825 ms
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-ime.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-search.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-large.png (1920x1080)
+Editor rendered: frames=13 nodes=772 text=134 draws=995 batches=348 elapsed=1.908 s
+Editor visual checks passed: 13 Vulkan PNGs, 2 languages, 3 sizes; panel colors/orientation, text, outline/clipping, popup and state differences.
+Inspect PNGs: /home/fuurin/asm/unity_ui/build/editor-previews
+./build/editor --frames 90 --smoke --output build/editor-live.png
+Editor font: /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf (326 glyphs)
+Editor GPU: Intel(R) Graphics (RPL-P)
+Editor language: zh-CN
+Input glyph page 1: 3 new glyphs, missing=0, build+upload=174.866 ms
+SDL text input: preedit, dynamic glyphs and Chinese commit OK
+Editor screenshot: build/editor-live.png (1280x800)
+Editor rendered: frames=90 nodes=772 text=134 draws=995 batches=348 elapsed=1.675 s
+./build/editor --headless --output build/editor.png
+Editor font: /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf (326 glyphs)
+Editor GPU: Intel(R) Graphics (RPL-P)
+Editor language: zh-CN
+Editor screenshot: build/editor.png (1440x900)
+Editor rendered: frames=1 nodes=772 text=134 draws=995 batches=348 elapsed=0.131 s

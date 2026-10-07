@@ -1,0 +1,3 @@
+[submodule "application/OpenSekai_Community_rs"]
+	path = application/OpenSekai_Community_rs
+	url = git@github.com:AntheaLaffy/OpenSekai_Community_rs.git

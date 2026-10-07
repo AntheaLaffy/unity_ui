@@ -1,0 +1,109 @@
+{
+  "VersionCode": 1,
+  "NoteList": [
+    {
+      "id": 1,
+      "ticks": 240,
+      "laneStart": 1,
+      "laneEnd": 3,
+      "category": 1,
+      "type": 0,
+      "speedRatio": 1,
+      "noteLineType": 2,
+      "noteBaseType": 2,
+      "previousConnectionId": -1,
+      "nextConnectionId": 2,
+      "direction": 0,
+      "isSkip": false
+    },
+    {
+      "id": 2,
+      "ticks": 1200,
+      "laneStart": 5,
+      "laneEnd": 8,
+      "category": 1,
+      "type": 0,
+      "speedRatio": 1,
+      "noteLineType": 2,
+      "noteBaseType": 1,
+      "previousConnectionId": 1,
+      "nextConnectionId": -1,
+      "direction": 0,
+      "isSkip": false
+    },
+    {
+      "id": 3,
+      "ticks": 0,
+      "laneStart": 7,
+      "laneEnd": 8,
+      "category": 1,
+      "type": 1,
+      "speedRatio": 1,
+      "noteLineType": 1,
+      "noteBaseType": 2,
+      "previousConnectionId": -1,
+      "nextConnectionId": 4,
+      "direction": 0,
+      "isSkip": false
+    },
+    {
+      "id": 4,
+      "ticks": 960,
+      "laneStart": 9,
+      "laneEnd": 11,
+      "category": 1,
+      "type": 1,
+      "speedRatio": 1,
+      "noteLineType": 1,
+      "noteBaseType": 1,
+      "previousConnectionId": 3,
+      "nextConnectionId": -1,
+      "direction": 0,
+      "isSkip": false
+    },
+    {
+      "id": 5,
+      "ticks": 0,
+      "laneStart": 0,
+      "laneEnd": 1,
+      "category": 9,
+      "type": 0,
+      "speedRatio": 1,
+      "noteLineType": 0,
+      "noteBaseType": 10,
+      "previousConnectionId": -1,
+      "nextConnectionId": 6,
+      "direction": 0,
+      "isSkip": false
+    },
+    {
+      "id": 6,
+      "ticks": 1440,
+      "laneStart": 2,
+      "laneEnd": 2,
+      "category": 10,
+      "type": 0,
+      "speedRatio": 1,
+      "noteLineType": 0,
+      "noteBaseType": 13,
+      "previousConnectionId": 5,
+      "nextConnectionId": -1,
+      "direction": 0,
+      "isSkip": false
+    }
+  ],
+  "MusicScoreEventDataList": [
+    {
+      "id": 1,
+      "ticks": 0,
+      "eventType": 0,
+      "changeValue": 120
+    },
+    {
+      "id": 2,
+      "ticks": 0,
+      "eventType": 3,
+      "changeValue": "4/4"
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "frames": 110,
+  "committed_title": "ASM 原生中文输入",
+  "final_framebuffer": [
+    1280,
+    800
+  ],
+  "framebuffers": [
+    "1920x1080",
+    "1280x800",
+    "1280x800"
+  ],
+  "vulkan_validation": true,
+  "image": "/home/fuurin/asm/unity_ui/build/opensekai-native-smoke.png",
+  "saved_note": {
+    "id": 1,
+    "ticks": 480,
+    "laneStart": 1,
+    "laneEnd": 3,
+    "category": 0,
+    "type": 0,
+    "speedRatio": 1.0,
+    "noteLineType": 0,
+    "noteBaseType": 1,
+    "previousConnectionId": -1,
+    "nextConnectionId": -1,
+    "direction": 0,
+    "isSkip": false,
+    "isDecoration": false,
+    "guideColor": null
+  },
+  "original_atlas_loaded": true,
+  "saved_long_notes": [
+    {
+      "id": 2,
+      "ticks": 480,
+      "laneStart": 5,
+      "laneEnd": 7,
+      "category": 1,
+      "type": 0,
+      "speedRatio": 1.0,
+      "noteLineType": 0,
+      "noteBaseType": 2,
+      "previousConnectionId": -1,
+      "nextConnectionId": 3,
+      "direction": 0,
+      "isSkip": false,
+      "isDecoration": false,
+      "guideColor": null
+    },
+    {
+      "id": 3,
+      "ticks": 720,
+      "laneStart": 5,
+      "laneEnd": 7,
+      "category": 1,
+      "type": 0,
+      "speedRatio": 1.0,
+      "noteLineType": 0,
+      "noteBaseType": 1,
+      "previousConnectionId": 2,
+      "nextConnectionId": -1,
+      "direction": 0,
+      "isSkip": false,
+      "isDecoration": false,
+      "guideColor": null
+    }
+  ],
+  "scope": "Native SDL/Vulkan Chinese input, manager-to-maker navigation, note placement, undo/redo/save, modal and resize; not a Unity raster comparison."
+}

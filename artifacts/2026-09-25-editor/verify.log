@@ -1,0 +1,134 @@
+./build/smoke
+draw_count=3
+0: p0=(0.0,1080.0) p2=(1920.0,0.0) alpha=1.00
+1: p0=(928.0,623.0) p2=(1432.0,402.0) alpha=1.00
+2: p0=(530.0,835.0) p2=(830.0,745.0) alpha=1.00
+./build/sprite
+nine-slice draw_count=9, u=[0.250 0.300 0.675 0.750]
+./build/filled
+filled image crop OK: h=25.0% v=50.0%
+./build/tween_fill
+fill tween OK at t=.25
+./build/batch
+painter-order adjacent batching OK: 7 draws -> 5 batches
+./build/gpu_vertices
+ASM GPU vertex packing OK: 1 quad -> 4 vertices
+./build/soft_mask
+soft-mask inheritance OK: rounded parent mask propagated to child draw
+./build/text_expand
+MSDF text path OK: shaped glyphs -> ASM world quads -> painter-order batch
+./build/stencil_core
+stencil core OK: nested ancestry -> batch key -> stable ASM node quads
+./build/layer_ops
+offscreen render-op planning OK: 4 draws -> 6 ops (1 layer, painter order preserved)
+./build/text_scene_struct
+real-text retained scene OK: 75 nodes / 19 text nodes / 7 song cards / 7 jacket slots / 0 pixel-font quads
+./build/interaction
+interaction OK: contain=320x180 cover-u=[0.21875 0.78125] spring-pos=3.000 target=4.0 carousel=5@5.00 pointer-hit=3 drag->4 wheel->5
+./build/song_binding
+song detail binding OK: 7 selections -> title/artist/subtitle/difficulty/score/combo/gauge/accent
+./build/virtual_list
+virtual ScrollRect OK: logical=100000 retained-slots=7 nodes=75 draws=66 batches=41 viewport=1080x104 tail=[99993..99999]
+./build/asset_cache
+asset cache OK: cap=4 resident=3 loads=5 evictions=2 deferred=2 failures=1 pending-submits=1 pending-completions=1
+./build/perf_core
+perf core: N=4096 samples=9 x iters=160 min/median/max=264.5/300.0/354.5 ns/draw median-throughput=3.33 Mdraw/s median-batches=4096.0
+./build/scene_profile
+song scene profile: nodes=916 draws=915 panels=25 glyph-pixels=876 batches=33 ns/draw min/med/max=171.9/190.4/275.8
+song scene CPU regression OK
+./build/realtime_loop
+realtime CPU: frames=1200 nodes=916 draws=915 worst-batches=33 p50/p95/p99/max=156.37/250.13/306.21/599.26 us
+realtime animation/CPU regression OK
+./build/carousel_profile
+carousel scene: frames=2400 nodes=75 draws=66 worst-batches=41 selected=4 p50/p95/p99=9.18/10.72/16.34 us
+carousel interaction/perf regression OK
+./build/pointer_profile
+pointer ScrollRect: frames=2400 drags=10 wheels=10 selected=3 draws=66 worst-batches=41 p50/p95/p99=7.91/10.46/17.68 us
+pointer click/drag/wheel + carousel binding regression OK
+./build/virtual_list_profile
+virtual list perf: logical=100000 retained-slots=7 nodes=75 worst-draws=66 worst-batches=41 p50/p95/p99=7.96/9.78/12.73 us
+100k-song virtualization regression OK: O(retained slots), not O(logical songs)
+./build/asset_cache_profile
+asset stream perf: logical=100000 cache=12 max-resident=12 loads=140 evictions=128 hits=16480 deferred=180 p50/p95/p99=0.12/0.15/0.27 us
+asset streaming/LRU regression OK: fixed residency independent of catalog size
+./build/font_sdf
+font SDF OK: font=/usr/share/fonts/noto-cjk/NotoSansCJK-Regular.ttc atlas=1024x256 glyphs=37 missing=0 shaped=12 px-range=16.0
+./build/text_scene_profile
+real-text scene: nodes=75 text-nodes=19 expanded-draws=137 batches=41 frame-med=110.41 us ns/draw=805.9 atlas=1024x256 glyphs=37 missing=0
+real-text scene regression OK
+./build/png_loader
+PNG asset loader OK: 2x2 RGBA decode exact
+HarfBuzz adapter built successfully.
+Vulkan backend, texture upload, and SPIR-V shaders built successfully.
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_runtime.c build/vulkan_backend.o build/asmui.o -lvulkan -lm -o build/vulkan_runtime
+./build/vulkan_runtime
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+orientation pixels: center=(255,64,64,255) top=(64,224,96) bottom=(64,128,255) clip=(255,64,255)
+Vulkan runtime smoke OK: orientation + scissor + 3-slot vertex ring -> draw -> readback
+./build/vulkan_texture_async
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+async texture upload OK: submitted=4 completed=4 poll-rounds=2 queueWaitIdle=0
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_stencil.c build/vulkan_backend.o build/asmui.o -lvulkan -lm -o build/vulkan_stencil
+./build/vulkan_stencil
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+center pixel: rgba=(255,64,64,255)
+AABB-corner pixel: rgba=(0,0,0,255)
+Vulkan stencil smoke OK: rotated mask -> stencil push -> clipped draw -> stencil pop -> readback
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_offscreen.c build/vulkan_backend.o build/vulkan_target_pool.o build/asmui.o -lvulkan -lm -o build/vulkan_offscreen
+./build/vulkan_offscreen
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+center pixel: rgba=(255,64,64,255)
+outside-layer-content pixel: rgb=(0,0,0)
+render-target pool: created=1 reused=1
+Vulkan offscreen smoke OK: layer target -> sampled composite -> RT pool reuse -> readback
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_blur.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/vulkan_blur
+./build/vulkan_blur
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+blur pixels: center.r=255 halo.r=18 far.r=0
+GPU post timings: blurH=94.48 us blurV=88.39 us composite=38.12 us total=220.99 us
+Vulkan blur smoke OK: offscreen -> blur H -> blur V -> composite -> timestamp/readback
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_glow.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/vulkan_glow
+./build/vulkan_glow
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+glow pixels: center.r=255 bright-halo.r=22 dim-halo.g=0 far.r=0
+GPU glow timings (half-res blur): extract=24.32 us blurH=31.67 us blurV=30.73 us composite=54.22 us total=140.94 us
+render-target pool: created=4 reused=1 half-res-reused=yes
+Vulkan glow smoke OK: bright-pass/downsample -> blur H/V -> additive upsample -> timestamp/readback
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  demo/song_select_vulkan.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/song_select_demo
+./build/song_select_demo
+GPU: Intel(R) Graphics (RPL-P) (vendor=0x8086 device=0xa7a8)
+song scene: nodes=916 draws=915 batches=33 panels=25 glyph-pixels=876
+song pixels: play=(125,255,255) glow-halo.b=31 far-peak=31
+wrote build/song_select.ppm
+GPU song-select timings: base=1319.27 us extract=216.72 us blurH=347.14 us blurV=356.20 us composite=606.77 us total=2846.09 us
+render-target pool: created=4 reused=1 half-res-reused=yes
+Song-select Vulkan demo OK: scene -> offscreen -> half-res glow -> composite -> PPM/readback
+Open build/song_select.ppm to inspect the rendered UI.
+./build/editor_core
+editor ASM: project 100 points, hit priority/edges/NaN, nested Y-up layout, gradient orientation OK
+editor interaction: locale, object binding, numeric edit, play/pause/step, tabs, foldouts, XYZ transform, IME preedit, UTF-8 bounds/search/backspace, clipped hits and scrolling OK
+editor localization: 2 locales x 24 states, 25210 shaped glyphs covered, atlas=2048x1024, missing=0, font=/home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf
+Editor core checks passed
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libpng16 demo/editor_main.c build/editor_i18n.o build/editor_scene.o build/asmui_editor.o build/asmui.o build/text_stream.o build/font_sdf_freetype.o build/text_harfbuzz.o build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_texture.o $(pkg-config --cflags --libs sdl3) -lharfbuzz -lfreetype -lpng16 -lvulkan -lm -o build/editor
+python3 tools/check_editor_visual.py
+Editor font: /home/fuurin/.local/share/fonts/LXGWWenKai-Regular.ttf (326 glyphs)
+Editor GPU: Intel(R) Graphics (RPL-P)
+Editor language: zh-CN
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-zh.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-en.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-compact.png (1024x680)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-compact-en.png (1024x680)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-menu.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-camera.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-console.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-2d.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-game.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-rotated.png (1440x900)
+Input glyph page 1: 3 new glyphs, missing=0, build+upload=240.536 ms
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-ime.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-search.png (1440x900)
+Editor screenshot: /home/fuurin/asm/unity_ui/build/editor-previews/editor-large.png (1920x1080)
+Editor rendered: frames=13 nodes=772 text=134 draws=995 batches=348 elapsed=2.656 s
+Editor visual checks passed: 13 Vulkan PNGs, 2 languages, 3 sizes; panel colors/orientation, text, outline/clipping, popup and state differences.
+Inspect PNGs: /home/fuurin/asm/unity_ui/build/editor-previews
+ASMUI v0.21 full verification passed. Editor visual output: build/editor-previews/

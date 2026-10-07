@@ -1,0 +1,13 @@
+{
+  "formatVersion": 1,
+  "id": "baseline0002",
+  "title": "长条与曲线基准",
+  "scoreTitle": "原始布局与音符",
+  "userName": "OpenSekai",
+  "scoreFileName": "score.json",
+  "audioFileName": "audio.ogg",
+  "jacketFileName": "jacket.png",
+  "secForMusicScoreMaker": 120,
+  "musicDifficultyType": "master",
+  "playLevel": 1
+}

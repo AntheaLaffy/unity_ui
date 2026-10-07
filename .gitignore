@@ -1,0 +1,37 @@
+# Native and Rust build output.
+/build/
+**/build/
+**/target/
+**/.cache/
+
+# Local links and nested checkouts are published separately.
+/application/diffsinger
+/application/OpenSekai/
+
+# The OpenSekai community project is consumed as the submodule below; keep
+# its large source assets and generated content out of this parent repository.
+/application/OpenSekai_Community_rs/Assets/
+/application/OpenSekai_Community_rs/content/
+/application/OpenSekai_Community_rs/resources/
+/application/OpenSekai_Community_rs/ffmpeg/
+
+# Model and generated media artifacts.
+**/*.onnx
+**/*.onnx.data
+**/*.dsv*
+**/*.bin
+**/*.dll
+**/*.so
+**/*.dylib
+**/*.a
+**/*.o
+**/*.wav
+**/*.mp3
+**/*.mkv
+
+# Editor and tool caches.
+**/.pytest_cache/
+**/__pycache__/
+**/.DS_Store
+:memory:.ses
+/artifacts/2026-09-25-editor/font-profile.txt

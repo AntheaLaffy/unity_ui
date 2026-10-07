@@ -1,0 +1,129 @@
+{
+  "status": "passed",
+  "actualAssets": 16,
+  "assets": [
+    {
+      "file": "/home/fuurin/Music/LOCK/other.flac",
+      "sha256": "c5f4f60f868b0d8b5fe608a9ff9c349b8c2cbcfefada81f3693d73676c6645c8",
+      "excerptFrames": 88187,
+      "durationMs": 193203.83219954648,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/天使/天使-KOKIA_other.flac",
+      "sha256": "52ce0cbbcf979e413be99d612187c3fbca7678c41d77ef301a39d0f9763064bc",
+      "excerptFrames": 88196,
+      "durationMs": 309485.306122449,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/天使/天使-KOKIA_vocals_Instruments_vocals-lead.flac",
+      "sha256": "b102d4660c9c331a59b59a92c058ffee0d2464ea8b5d1d4280bf9cc6b523ac31",
+      "excerptFrames": 88196,
+      "durationMs": 309485.306122449,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/宇宙之花/宇宙の花-島みやえい子_other.flac",
+      "sha256": "d8b3987b57dc5a3fa289557f9acd2df76f5d85c0e0836c7368f424bd7fafa5f6",
+      "excerptFrames": 88200,
+      "durationMs": 370200.0,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/宇宙之花/宇宙の花-島みやえい子_vocals_back-instrum.flac",
+      "sha256": "e2e816fcb86edd2b0ae6503ef0f178138446be6c4831bd004a1e9f0d174300bc",
+      "excerptFrames": 88200,
+      "durationMs": 370200.0,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/宇宙之花/宇宙の花-島みやえい子_vocals_vocals-lead.flac",
+      "sha256": "319e2833da386cc8fd7f5f1a66225a0606ea9115b938825c26383adf09665e58",
+      "excerptFrames": 88200,
+      "durationMs": 370200.0,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/恋音と雨空/Inst.flac",
+      "sha256": "1f3f5cba4fe5ba4bb08791cfa2f87f9fce68d3accfa20f93f5187ec32a4980b5",
+      "excerptFrames": 88184,
+      "durationMs": 318972.5170068027,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/恋音と雨空/干声/love and rain-harm-high.flac",
+      "sha256": "36a9e782221ee059946d1a1138195b94fc39d9d0aa79a7e46a1ce8bf7f36804d",
+      "excerptFrames": 88184,
+      "durationMs": 318972.5170068027,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/恋音と雨空/干声/love and rain-harm-low.flac",
+      "sha256": "ff71934d89d48d1eb9e609196183349a1c31c7fdc7f382b4a0962d26b89ca99d",
+      "excerptFrames": 88184,
+      "durationMs": 318972.5170068027,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/恋音と雨空/干声/love and rain-lead.flac",
+      "sha256": "b862dbaae44fe2af337849747f0026bef815df101a65deb83f1919b80bddb82a",
+      "excerptFrames": 88184,
+      "durationMs": 318972.5170068027,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/白い雪/harm.flac",
+      "sha256": "b811efc89c0e9e12bb4dca485110f077f21c4cc5865df1eb68eaa50ccf2f7ca2",
+      "excerptFrames": 88192,
+      "durationMs": 262013.33333333334,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/白い雪/inst.flac",
+      "sha256": "425542e2b556a4c229327f5447979e84e310ef11e92e7edb22f3d35ec2f20d2a",
+      "excerptFrames": 88192,
+      "durationMs": 262013.33333333334,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/白い雪/lead.flac",
+      "sha256": "1f2e2b65c962263f3e71aae1499f6f5e5e4e27cd5cecd5572329d6a8e4a10ca8",
+      "excerptFrames": 88192,
+      "durationMs": 262013.33333333334,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/萤琢/inst.flac",
+      "sha256": "83025135b5eb5b8cd43fa0e15dc984b8381f46e4a4e03af8c0e6dbf22f914475",
+      "excerptFrames": 88177,
+      "durationMs": 220788.0045351474,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/萤琢/vocals_back-instrum.wav",
+      "sha256": "5a51ce7225b2b3b3edbc9441f4a95b157c725833449a2affb8c9c3ef74ff0f65",
+      "excerptFrames": 88177,
+      "durationMs": 220788.0045351474,
+      "sourceUnchanged": true
+    },
+    {
+      "file": "/home/fuurin/Music/萤琢/vocals_vocals-lead.wav",
+      "sha256": "6363e44752a41238349ebd181746e840dd3cc45ecb664469539adf2b5a677f80",
+      "excerptFrames": 88177,
+      "durationMs": 220788.0045351474,
+      "sourceUnchanged": true
+    }
+  ],
+  "checks": [
+    "real WAV/FLAC decoding",
+    "source hashes",
+    "clip timing",
+    "native voice plus backing PCM comparison",
+    "stereo pan",
+    "solo bypasses inactive voice models",
+    "mute",
+    "original media and hardlink write guards"
+  ],
+  "qualityScope": "numerical PCM mixing; perceptual singing quality and physical speaker output not certified"
+}

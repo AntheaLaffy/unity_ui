@@ -1,0 +1,95 @@
+Extracted source checksums: 97/97 OK
+make -n verify: OK
+mkdir -p build
+cc -O2 -c src/asmui.S -o build/asmui.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/smoke.c build/asmui.o -lm -o build/smoke
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/sprite.c build/asmui.o -lm -o build/sprite
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/filled.c build/asmui.o -lm -o build/filled
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/tween_fill.c build/asmui.o -lm -o build/tween_fill
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/batch.c build/asmui.o -lm -o build/batch
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/gpu_vertices.c build/asmui.o -lm -o build/gpu_vertices
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/soft_mask.c build/asmui.o -lm -o build/soft_mask
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c backend/text_stream.c -o build/text_stream.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/text_expand.c build/asmui.o build/text_stream.o -lm -o build/text_expand
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/stencil_core.c build/asmui.o -lm -o build/stencil_core
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c backend/render_ops.c -o build/render_ops.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/layer_ops.c build/asmui.o build/render_ops.o -lm -o build/layer_ops
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/text_scene_struct.c build/asmui.o -lm -o build/text_scene_struct
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c backend/interaction.c -o build/interaction.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/interaction.c build/interaction.o -lm -o build/interaction
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/song_binding.c build/asmui.o -lm -o build/song_binding
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/virtual_list.c build/asmui.o build/interaction.o -lm -o build/virtual_list
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c backend/asset_cache.c -o build/asset_cache.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/asset_cache.c build/asset_cache.o -o build/asset_cache
+./build/smoke
+./build/sprite
+./build/filled
+./build/tween_fill
+./build/batch
+./build/gpu_vertices
+./build/soft_mask
+./build/text_expand
+./build/stencil_core
+./build/layer_ops
+./build/text_scene_struct
+./build/interaction
+./build/song_binding
+./build/virtual_list
+./build/asset_cache
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/perf_core.c build/asmui.o -lm -o build/perf_core
+./build/perf_core
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/scene_profile.c build/asmui.o -lm -o build/scene_profile
+./build/scene_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/realtime_loop.c build/asmui.o -lm -o build/realtime_loop
+./build/realtime_loop
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/carousel_profile.c build/asmui.o build/interaction.o -lm -o build/carousel_profile
+./build/carousel_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/pointer_profile.c build/asmui.o build/interaction.o -lm -o build/pointer_profile
+./build/pointer_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/virtual_list_profile.c build/asmui.o build/interaction.o -lm -o build/virtual_list_profile
+./build/virtual_list_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. tests/asset_cache_profile.c build/asset_cache.o -o build/asset_cache_profile
+./build/asset_cache_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -c backend/font_sdf_freetype.c -o build/font_sdf_freetype.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -c backend/text_harfbuzz.c -o build/text_harfbuzz.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 tests/font_sdf.c build/font_sdf_freetype.o build/text_harfbuzz.o -lharfbuzz -lfreetype -lm -o build/font_sdf
+./build/font_sdf
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 tests/text_scene_profile.c build/asmui.o build/text_stream.o build/font_sdf_freetype.o build/text_harfbuzz.o -lharfbuzz -lfreetype -lm -o build/text_scene_profile
+./build/text_scene_profile
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/libpng16 -c backend/image_png.c -o build/image_png.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -I/usr/include/libpng16 tests/png_loader.c build/image_png.o -lpng16 -o build/png_loader
+./build/png_loader
+echo "HarfBuzz adapter built successfully."
+mkdir -p build/shaders
+glslc --target-env=vulkan1.3 shaders/ui.vert -o build/shaders/ui.vert.spv
+glslc --target-env=vulkan1.3 shaders/ui.frag -o build/shaders/ui.frag.spv
+glslc --target-env=vulkan1.3 shaders/post.vert -o build/shaders/post.vert.spv
+glslc --target-env=vulkan1.3 shaders/post.frag -o build/shaders/post.frag.spv
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  -c backend/vulkan_backend.c -o build/vulkan_backend.o
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  -c backend/vulkan_target_pool.c -o build/vulkan_target_pool.o
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  -c backend/vulkan_post.c -o build/vulkan_post.o
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  -c backend/vulkan_texture.c -o build/vulkan_texture.o
+echo "Vulkan backend, texture upload, and SPIR-V shaders built successfully."
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_runtime.c build/vulkan_backend.o build/asmui.o -lvulkan -lm -o build/vulkan_runtime
+./build/vulkan_runtime
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_texture_async.c build/vulkan_texture.o -lvulkan -o build/vulkan_texture_async
+./build/vulkan_texture_async
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_stencil.c build/vulkan_backend.o build/asmui.o -lvulkan -lm -o build/vulkan_stencil
+./build/vulkan_stencil
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_offscreen.c build/vulkan_backend.o build/vulkan_target_pool.o build/asmui.o -lvulkan -lm -o build/vulkan_offscreen
+./build/vulkan_offscreen
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_blur.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/vulkan_blur
+./build/vulkan_blur
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  tests/vulkan_glow.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/vulkan_glow
+./build/vulkan_glow
+cc -O2 -Wall -Wextra -std=c11 -Werror=missing-field-initializers -Iinclude -I.  demo/song_select_vulkan.c build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_post.o build/asmui.o -lvulkan -lm -o build/song_select_demo
+./build/song_select_demo
+echo "Open build/song_select.ppm to inspect the rendered UI."
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -c demo/editor_scene.c -o build/editor_scene.o
+cc -O2 -Wall -Wextra -std=c11 -Iinclude -I. -c demo/editor_i18n.c -o build/editor_i18n.o
+cc -O2 -c src/asmui_editor.S -o build/asmui_editor.o
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 tests/editor_core.c build/editor_scene.o build/editor_i18n.o build/asmui_editor.o build/asmui.o build/font_sdf_freetype.o build/text_harfbuzz.o -lharfbuzz -lfreetype -lm -o build/editor_core
+./build/editor_core
+cc -O2 -Wall -Wextra -std=c11 -Werror -Iinclude -I. -I/usr/include/harfbuzz -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include -I/usr/include/sysprof-6 -pthread -I/usr/include/freetype2 -I/usr/include/libpng16 -I/usr/include/libpng16 demo/editor_main.c build/editor_i18n.o build/editor_scene.o build/asmui_editor.o build/asmui.o build/text_stream.o build/font_sdf_freetype.o build/text_harfbuzz.o build/vulkan_backend.o build/vulkan_target_pool.o build/vulkan_texture.o $(pkg-config --cflags --libs sdl3) -lharfbuzz -lfreetype -lpng16 -lvulkan -lm -o build/editor
+python3 tools/check_editor_visual.py
+echo "ASMUI v0.21 full verification passed. Editor visual output: build/editor-previews/"
